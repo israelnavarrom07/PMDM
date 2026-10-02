@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Israel Navarro Muñoz"
+        android:text="@string/nombre_completo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
+        android:text="@string/cancelar"
         tools:layout_editor_absoluteX="43dp"
         tools:layout_editor_absoluteY="433dp" />
 
@@ -28,7 +28,7 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Continuar"
+        android:text="@string/continuar"
         tools:layout_editor_absoluteX="250dp"
         tools:layout_editor_absoluteY="426dp" />
 
