@@ -7,8 +7,8 @@
 
     <style name="Theme.RecursosIsrael" parent="Base.Theme.RecursosIsrael" />
     <style name="BotonTarea" parent="Widget.Material3.Button">
-        <item name="android:layout_height">56dp</item>
-        <item name="android:layout_margin">12dp</item>
+        <!--<item name="android:layout_height">56dp</item>
+        <item name="android:layout_margin">12dp</item>-->
         <item name="android:textSize">18sp</item>
     </style>
 </resources>
