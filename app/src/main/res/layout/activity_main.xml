@@ -22,7 +22,8 @@
         android:layout_height="wrap_content"
         android:text="@string/cancelar"
         tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="433dp" />
+        tools:layout_editor_absoluteY="433dp"
+        app:backgroundTint="@color/rojo"/>
 
     <Button
         android:id="@+id/button2"
@@ -30,6 +31,7 @@
         android:layout_height="wrap_content"
         android:text="@string/continuar"
         tools:layout_editor_absoluteX="250dp"
-        tools:layout_editor_absoluteY="426dp" />
+        tools:layout_editor_absoluteY="426dp"
+        app:backgroundTint="@color/verde"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
