@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "LayoutsIsrael"
+rootProject.name = "LoginIsrael"
 include(":app")
