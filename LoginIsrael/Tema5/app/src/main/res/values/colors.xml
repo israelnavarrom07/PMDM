@@ -8,4 +8,6 @@
     <color name="azul">#00DBFA</color>
     <color name="verde">#76E408</color>
     <color name="naranja">#FB5E00</color>
+    <color name="correcto">#76E408</color>
+    <color name="incorrecto">#FF0000</color>
 </resources>

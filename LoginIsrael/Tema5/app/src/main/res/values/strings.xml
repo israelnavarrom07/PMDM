@@ -5,4 +5,9 @@
     <string name="RecorContraseña">Recordar contraseña</string>
     <string name="Continuar">Continuar</string>
     <string name="Vacio"></string>
+    <string name="acceso_correcto">Usuario y contraseña correctos. Almacenados para siguientes accesos</string>
+    <string name="acceso_incorrecto">Acceso incorrecto</string>
+    <string name="falta_correo">Falta Correo</string>
+    <string name="falta_clave">Falta Clave</string>
+    <string name="Falta_recordar">Usuario y contraseña correctos. Almacenados para siguientes accesos. Con recordar</string>
 </resources>
