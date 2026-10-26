@@ -48,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
                 //Recorda contraseña activado
                 vacio.setText(R.string.Falta_recordar);
                 vacio.setTextColor(ContextCompat.getColor(this, R.color.verde));
+            }  else if(correo.equals(null)) {
+                etCorreo.setError(getString(R.string.falta_correo));
+                return;
+            } else if(clave.equals(null)) {
+                etClave.setError(getString(R.string.falta_clave));
+                return;
             } else if (correo.equals(CORREO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
                 // correcto, en verde (¿y si swRecordar está activado?)
                 vacio.setText(R.string.acceso_correcto);
