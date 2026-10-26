@@ -9,5 +9,8 @@
     <string name="acceso_incorrecto">Acceso incorrecto</string>
     <string name="falta_correo">Falta Correo</string>
     <string name="falta_clave">Falta Clave</string>
+    <string name="escribe_correo">Escribe tu correo</string>
+    <string name="escribe_clave">Escribe la contraseña</string>
+    <string name="acceso_bloqueado">Demasiados intentos: acceso bloqueado</string>
     <string name="Falta_recordar">Usuario y contraseña correctos. Almacenados para siguientes accesos. Con recordar</string>
 </resources>

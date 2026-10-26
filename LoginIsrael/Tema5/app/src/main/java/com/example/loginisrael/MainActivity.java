@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.widget.Toast;
 
 import com.google.android.material.materialswitch.MaterialSwitch;
 
@@ -44,8 +45,16 @@ public class MainActivity extends AppCompatActivity {
             String clave = etClave.getText().toString();
             boolean recordar = swRecordar.isChecked();
 
-            if (recordar == true && correo.equals(CORREO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
-                //Recorda contraseña activado
+            if (correo.isEmpty()) {
+                etCorreo.setError(getString(R.string.escribe_correo));
+                return;
+            }
+            if (clave.isEmpty()) {
+                etClave.setError(getString(R.string.escribe_clave));
+                return;
+            }
+
+            if (recordar && correo.equals(CORREO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
                 vacio.setText(R.string.Falta_recordar);
                 vacio.setTextColor(ContextCompat.getColor(this, R.color.verde));
             }  else if(correo.equals(null)) {
@@ -55,16 +64,21 @@ public class MainActivity extends AppCompatActivity {
                 etClave.setError(getString(R.string.falta_clave));
                 return;
             } else if (correo.equals(CORREO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
-                // correcto, en verde (¿y si swRecordar está activado?)
                 vacio.setText(R.string.acceso_correcto);
                 vacio.setTextColor(ContextCompat.getColor(this, R.color.correcto));
-            }else {
-                // incorrecto, en rojo
-                vacio.setText(R.string.acceso_incorrecto);
+            } else {
+                // Extra: tres intentos
+                intentos++;
+                if (intentos >= 3) {
+                    btnContinuar.setEnabled(false);
+                    vacio.setText(R.string.acceso_bloqueado);
+                    Toast.makeText(this, R.string.acceso_bloqueado, Toast.LENGTH_SHORT).show();
+                } else {
+                    vacio.setText(R.string.acceso_incorrecto);
+                }
                 vacio.setTextColor(ContextCompat.getColor(this, R.color.incorrecto));
             }
         });
-
 
     }
 }
