@@ -10,9 +10,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.listaisrael.Freestyler;
-import com.example.listaisrael.R;
-
 import java.util.ArrayList;
 
 public class AdaptadorFreestylers
@@ -42,7 +39,8 @@ public class AdaptadorFreestylers
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View fila = LayoutInflater.from(parent.getContext()).inflate(R.layout.fila_freestyler, parent, false);
+        View fila = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.fila_freestyler, parent, false);
         return new ViewHolder(fila);
     }
 
@@ -52,6 +50,12 @@ public class AdaptadorFreestylers
         holder.tvTitulo.setText(freestyler.getNombre());
         holder.tvSubtitulo.setText(freestyler.getResultado());
         holder.ivImagen.setImageResource(freestyler.getImagen());
+
+        // Al tocar la fila, un Toast con su título
+        holder.itemView.setOnClickListener(v ->
+                Toast.makeText(v.getContext(),
+                        freestyler.getNombre(),
+                        Toast.LENGTH_SHORT).show());
     }
 
     @Override
