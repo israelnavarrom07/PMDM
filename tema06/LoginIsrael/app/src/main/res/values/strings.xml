@@ -2,7 +2,7 @@
     <string name="app_name">LoginIsrael</string>
     <string name="Correo">Correo Electronico</string>
     <string name="Contraseña">Contraseña</string>
-    <string name="RecorContraseña">Recordar contraseña</string>
+    <string name="RecorContraseña">Recordar correo</string>
     <string name="Continuar">Continuar</string>
     <string name="Vacio"></string>
     <string name="acceso_correcto">Usuario y contraseña correctos. Almacenados para siguientes accesos</string>

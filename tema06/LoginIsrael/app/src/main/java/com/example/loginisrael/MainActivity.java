@@ -1,6 +1,7 @@
 package com.example.loginisrael;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -41,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
         TextView vacio = findViewById(R.id.vacio);
         MaterialSwitch swRecordar = findViewById(R.id.recordar);
 
+        SharedPreferences prefs = getSharedPreferences("sesion", MODE_PRIVATE);
+        String guardado = prefs.getString("correo", "");
+        if (!guardado.isEmpty()) {
+            etCorreo.setText(guardado);
+            swRecordar.setChecked(true);
+            etClave.requestFocus();
+        }
+
         btnContinuar.setOnClickListener(v -> {
             String correo = etCorreo.getText().toString().trim();
             String clave = etClave.getText().toString();
@@ -54,8 +63,12 @@ public class MainActivity extends AppCompatActivity {
                 etClave.setError(getString(R.string.escribe_clave));
                 return;
             }
-
             if (correo.equals(CORREO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
+                if (recordar) {
+                    prefs.edit().putString("correo", correo).apply();
+                } else {
+                    prefs.edit().remove("correo").apply();
+                }
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                 intent.putExtra(MenuActivity.EXTRA_CORREO, correo);
                 startActivity(intent);
