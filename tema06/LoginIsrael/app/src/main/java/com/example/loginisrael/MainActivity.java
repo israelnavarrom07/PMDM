@@ -1,5 +1,6 @@
 package com.example.loginisrael;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -54,20 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            if (recordar && correo.equals(CORREO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
-                vacio.setText(R.string.Falta_recordar);
-                vacio.setTextColor(ContextCompat.getColor(this, R.color.verde));
-            }  else if(correo.equals(null)) {
-                etCorreo.setError(getString(R.string.falta_correo));
-                return;
-            } else if(clave.equals(null)) {
-                etClave.setError(getString(R.string.falta_clave));
-                return;
-            } else if (correo.equals(CORREO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
-                vacio.setText(R.string.acceso_correcto);
-                vacio.setTextColor(ContextCompat.getColor(this, R.color.correcto));
+            if (correo.equals(CORREO_VALIDO) && clave.equals(CLAVE_VALIDA)) {
+                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                intent.putExtra(MenuActivity.EXTRA_CORREO, correo);
+                startActivity(intent);
+                finish();
             } else {
-                // Extra: tres intentos
                 intentos++;
                 if (intentos >= 3) {
                     btnContinuar.setEnabled(false);

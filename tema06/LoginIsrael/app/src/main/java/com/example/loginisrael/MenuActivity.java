@@ -1,5 +1,6 @@
 package com.example.loginisrael;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 
 public class MenuActivity extends AppCompatActivity {
     public static final String EXTRA_CORREO = "correo";
+    @SuppressLint("StringFormatInvalid")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
