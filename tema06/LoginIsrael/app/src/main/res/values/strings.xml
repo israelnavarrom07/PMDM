@@ -13,4 +13,7 @@
     <string name="escribe_clave">Escribe la contraseña</string>
     <string name="acceso_bloqueado">Demasiados intentos: acceso bloqueado</string>
     <string name="Falta_recordar">Usuario y contraseña correctos. Almacenados para siguientes accesos. Con recordar</string>
+    <string name="menu_titulo">Menú principal</string>
+    <string name="menu_saludo">Hola, israel@correo.com</string>
+    <string name="menu_cerrar_sesion">Cerrar sesión</string>
 </resources>
