@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="azul">#00DBFA</color>
+    <color name="black">#FF000000</color>
+    <color name="correcto">#76E408</color>
+    <color name="gris">#757171</color>
+    <color name="incorrecto">#FF0000</color>
+    <color name="morado">#9A069D</color>
+    <color name="naranja">#FB5E00</color>
+    <color name="rojo">#FF0000</color>
+    <color name="verde">#76E408</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="Continuar">Continuar</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="Correo">Correo Electronico</string>
+    <string name="Falta_recordar">Usuario y contraseña correctos. Almacenados para siguientes accesos. Con recordar</string>
+    <string name="RecorContraseña">Recordar contraseña</string>
+    <string name="Vacio"/>
+    <string name="acceso_correcto">Usuario y contraseña correctos. Almacenados para siguientes accesos</string>
+    <string name="acceso_incorrecto">Acceso incorrecto</string>
+    <string name="app_name">LoginIsrael</string>
+    <string name="falta_clave">Falta Clave</string>
+    <string name="falta_correo">Falta Correo</string>
+    <style name="Base.Theme.LoginIsrael" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.LoginIsrael" parent="Base.Theme.LoginIsrael"/>
+</resources>
