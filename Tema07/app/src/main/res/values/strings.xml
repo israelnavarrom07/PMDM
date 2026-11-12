@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ReproductorIsrael</string>
+    <string name="cancion">Believer · Imagine Dragons</string>
+    <string name="tiempo">00:00</string>
+    <string name="play">Play</string>
+    <string name="pausa">Pausa</string>
+    <string name="efectos">Efectos de sonido</string>
+    <string name="aplauso">Aplauso</string>
+    <string name="campana">Campana</string>
+    <string name="laser">Láser</string>
+    <string name="moneda">Moneda</string>
 </resources>
