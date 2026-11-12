@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:progressTint="@color/morado"
-        android:progressBackgroundTint="@color/oscuro"
+        android:progressBackgroundTint="@color/moscuro"
         android:thumbTint="@color/morado"
         app:layout_constraintTop_toBottomOf="@id/titulo"
         app:layout_constraintStart_toStartOf="parent"
