@@ -67,6 +67,37 @@ public class MainActivity extends AppCompatActivity {
         });
         pausa.setOnClickListener(v -> player.pause());
 
+        seekbar = findViewById(R.id.seekbar);
+        actual = findViewById(R.id.actual);
+        total = findViewById(R.id.total);
 
+        player.addListener(new Player.Listener() {
+            @Override
+            public void onPlaybackStateChanged(int estado) {
+                if (estado == Player.STATE_READY) {
+                    int duracion = (int) player.getDuration();
+                    seekbar.setMax(duracion);
+                    total.setText(formatear(duracion));
+                }
+            }
+        });
+
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar barra, int progreso, boolean usuario) { }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar barra) { }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar barra) {
+                player.seekTo(barra.getProgress());
+            }
+        });
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        handler.post(actualizar);
     }
 }
