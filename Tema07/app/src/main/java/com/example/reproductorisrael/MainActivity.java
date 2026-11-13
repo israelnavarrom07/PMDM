@@ -1,5 +1,7 @@
 package com.example.reproductorisrael;
 
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar seekbar;
     private TextView actual, total;
     private final Handler handler = new Handler(Looper.getMainLooper());
+    private SoundPool soundPool;
+    private final int[] sonidos = new int[4];
+    private int cargados = 0;
     private final Runnable actualizar = new Runnable() {
         @Override
         public void run() {
@@ -94,6 +99,42 @@ public class MainActivity extends AppCompatActivity {
                 player.seekTo(barra.getProgress());
             }
         });
+
+        Button[] botones = {
+                findViewById(R.id.aplauso),
+                findViewById(R.id.campana),
+                findViewById(R.id.laser),
+                findViewById(R.id.moneda)
+        };
+
+        AudioAttributes atributos = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+
+        soundPool = new SoundPool.Builder()
+                .setMaxStreams(4)
+                .setAudioAttributes(atributos)
+                .build();
+
+        soundPool.setOnLoadCompleteListener((pool, id, estado) -> {
+            cargados++;
+            if (cargados == 4) {
+                for (Button boton : botones) {
+                    boton.setEnabled(true);
+                }
+            }
+        });
+
+        sonidos[0] = soundPool.load(this, R.raw.aplausos, 1);
+        sonidos[1] = soundPool.load(this, R.raw.campana, 1);
+        sonidos[2] = soundPool.load(this, R.raw.laser, 1);
+        sonidos[3] = soundPool.load(this, R.raw.moneda, 1);
+
+        for (int i = 0; i < botones.length; i++) {
+            final int sonido = sonidos[i];
+            botones[i].setOnClickListener(v -> soundPool.play(sonido, 1f, 1f, 1, 0, 1f));
+        }
     }
     @Override
     protected void onStart() {
@@ -111,5 +152,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         player.release();
+        soundPool.release();
     }
 }
