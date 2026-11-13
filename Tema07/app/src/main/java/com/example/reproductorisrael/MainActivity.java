@@ -100,4 +100,16 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         handler.post(actualizar);
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        player.pause();
+        handler.removeCallbacks(actualizar);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        player.release();
+    }
 }
