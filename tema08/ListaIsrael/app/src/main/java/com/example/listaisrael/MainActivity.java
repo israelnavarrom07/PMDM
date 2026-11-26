@@ -1,6 +1,8 @@
 package com.example.listaisrael;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +13,14 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,16 +36,21 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        // 1. Los datos: al menos 8 elementos
+        // 1. Los datos: se leen de res/raw/datos.json
         ArrayList<Freestyler> freestylers = new ArrayList<>();
-        freestylers.add(new Freestyler("Wos", "Campeón · Temporada 1 (2018)", R.drawable.lapiz));
-        freestylers.add(new Freestyler("Trueno", "Campeón · Temporada 2 (2019)", R.drawable.letras));
-        freestylers.add(new Freestyler("Papo", "Subcampeón · Temporada 2 (2019)", R.drawable.mas));
-        freestylers.add(new Freestyler("Stuart", "Campeón · Temporada 3 (2020/21)", R.drawable.vientoo));
-        freestylers.add(new Freestyler("Papo", "Subcampeón · Temporada 3 (2020/21)", R.drawable.mas));
-        freestylers.add(new Freestyler("Papo", "Campeón · Temporada 4 (2022/23)", R.drawable.lapiz));
-        freestylers.add(new Freestyler("Mecha", "Subcampeón · Temporada 4 (2022/23)", R.drawable.vientoo));
-        freestylers.add(new Freestyler("Larrix", "Campeón · Temporada 5 (2023)", R.drawable.letras));
+        try {
+            JSONArray array = new JSONArray(leerRaw(R.raw.datos));
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject objeto = array.getJSONObject(i);
+                freestylers.add(new Freestyler(
+                        objeto.getString("nombre"),
+                        objeto.getString("resultado"),
+                        objeto.getString("imagen")));
+            }
+        } catch (IOException | JSONException e) {
+            Toast.makeText(this, "No se pudo leer datos.json", Toast.LENGTH_LONG).show();
+            Log.e("MainActivity", "Error al leer datos.json", e);
+        }
 
         // 2. La lista: cómo se colocan las filas y quién las pinta
         RecyclerView rvLista = findViewById(R.id.rvLista);
@@ -43,5 +58,17 @@ public class MainActivity extends AppCompatActivity {
         rvLista.addItemDecoration(
                 new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         rvLista.setAdapter(new AdaptadorFreestylers(freestylers));
+    }
+
+    private String leerRaw(int recurso) throws IOException {
+        InputStream is = getResources().openRawResource(recurso);
+        BufferedReader lector = new BufferedReader(new InputStreamReader(is));
+        StringBuilder texto = new StringBuilder();
+        String linea;
+        while ((linea = lector.readLine()) != null) {
+            texto.append(linea);
+        }
+        lector.close();
+        return texto.toString();
     }
 }

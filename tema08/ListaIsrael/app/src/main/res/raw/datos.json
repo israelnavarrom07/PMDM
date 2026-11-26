@@ -1,10 +1,10 @@
 [
-  { "id": 1, "nombre": "Wos", "resultado": "Campeón · Temporada 1 (2018)", "imagen": "https://commons.wikimedia.org/wiki/File:WOS_EN_HARLEM_FESTIVAL.jpg" },
-  { "id": 2, "nombre": "Trueno", "resultado": "Campeón · Temporada 2 (2019)", "imagen": "https://commons.wikimedia.org/wiki/File:Nacho_VS_Trueno_ftt.jpg" },
-  { "id": 3, "nombre": "Papo", "resultado": "Subcampeón · Temporada 2 (2019)", "imagen": "https://commons.wikimedia.org/wiki/File:Papo_MC_2020.jpg" },
+  { "id": 1, "nombre": "Wos", "resultado": "Campeón · Temporada 1 (2018)", "imagen": "https://picsum.photos/id/10/400/400" },
+  { "id": 2, "nombre": "Trueno", "resultado": "Campeón · Temporada 2 (2019)", "imagen": "https://picsum.photos/id/11/400/400" },
+  { "id": 3, "nombre": "Papo", "resultado": "Subcampeón · Temporada 2 (2019)", "imagen": "https://picsum.photos/id/12/400/400" },
   { "id": 4, "nombre": "Stuart", "resultado": "Campeón · Temporada 3 (2020/21)", "imagen": "https://picsum.photos/id/13/400/400" },
-  { "id": 5, "nombre": "Papo", "resultado": "Subcampeón · Temporada 3 (2020/21)", "imagen": "https://commons.wikimedia.org/wiki/File:Papo_MC_2020.jpg" },
-  { "id": 6, "nombre": "Papo", "resultado": "Campeón · Temporada 4 (2022/23)", "imagen": "https://commons.wikimedia.org/wiki/File:Papo_MC_2020.jpg" },
+  { "id": 5, "nombre": "Papo", "resultado": "Subcampeón · Temporada 3 (2020/21)", "imagen": "https://picsum.photos/id/14/400/400" },
+  { "id": 6, "nombre": "Papo", "resultado": "Campeón · Temporada 4 (2022/23)", "imagen": "https://picsum.photos/id/15/400/400" },
   { "id": 7, "nombre": "Mecha", "resultado": "Subcampeón · Temporada 4 (2022/23)", "imagen": "https://picsum.photos/id/16/400/400" },
   { "id": 8, "nombre": "Larrix", "resultado": "Campeón · Temporada 5 (2023)", "imagen": "https://picsum.photos/id/17/400/400" }
 ]
