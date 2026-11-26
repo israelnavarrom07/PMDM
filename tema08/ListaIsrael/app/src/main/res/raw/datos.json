@@ -1,10 +1,10 @@
 [
-  { "id": 1, "titulo": "Titanic", "anio": "1997", "imagen": "https://picsum.photos/id/10/400/600" },
-  { "id": 2, "titulo": "Avatar", "anio": "2009", "imagen": "https://picsum.photos/id/11/400/600" },
-  { "id": 3, "titulo": "Coco", "anio": "2017", "imagen": "https://picsum.photos/id/12/400/600" },
-  { "id": 4, "titulo": "Inception", "anio": "2010", "imagen": "https://picsum.photos/id/13/400/600" },
-  { "id": 5, "titulo": "Toy Story", "anio": "1995", "imagen": "https://picsum.photos/id/14/400/600" },
-  { "id": 6, "titulo": "El Rey León", "anio": "1994", "imagen": "https://picsum.photos/id/15/400/600" },
-  { "id": 7, "titulo": "Gladiator", "anio": "2000", "imagen": "https://picsum.photos/id/16/400/600" },
-  { "id": 8, "titulo": "Matrix", "anio": "1999", "imagen": "https://picsum.photos/id/17/400/600" }
+  { "id": 1, "nombre": "Wos", "resultado": "Campeón · Temporada 1 (2018)", "imagen": "https://picsum.photos/id/10/400/400" },
+  { "id": 2, "nombre": "Trueno", "resultado": "Campeón · Temporada 2 (2019)", "imagen": "https://picsum.photos/id/11/400/400" },
+  { "id": 3, "nombre": "Papo", "resultado": "Subcampeón · Temporada 2 (2019)", "imagen": "https://picsum.photos/id/12/400/400" },
+  { "id": 4, "nombre": "Stuart", "resultado": "Campeón · Temporada 3 (2020/21)", "imagen": "https://picsum.photos/id/13/400/400" },
+  { "id": 5, "nombre": "Papo", "resultado": "Subcampeón · Temporada 3 (2020/21)", "imagen": "https://picsum.photos/id/14/400/400" },
+  { "id": 6, "nombre": "Papo", "resultado": "Campeón · Temporada 4 (2022/23)", "imagen": "https://picsum.photos/id/15/400/400" },
+  { "id": 7, "nombre": "Mecha", "resultado": "Subcampeón · Temporada 4 (2022/23)", "imagen": "https://picsum.photos/id/16/400/400" },
+  { "id": 8, "nombre": "Larrix", "resultado": "Campeón · Temporada 5 (2023)", "imagen": "https://picsum.photos/id/17/400/400" }
 ]
