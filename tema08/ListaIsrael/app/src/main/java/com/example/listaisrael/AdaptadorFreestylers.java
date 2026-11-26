@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.bumptech.glide.Glide;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,7 +50,7 @@ public class AdaptadorFreestylers
         Freestyler freestyler = freestylers.get(position);
         holder.tvTitulo.setText(freestyler.getNombre());
         holder.tvSubtitulo.setText(freestyler.getResultado());
-        holder.ivImagen.setImageResource(freestyler.getImagen());
+        Glide.with(holder.itemView).load(freestyler.getImagen()).into(holder.ivImagen);
 
         // Al tocar la fila, un Toast con su título
         holder.itemView.setOnClickListener(v ->

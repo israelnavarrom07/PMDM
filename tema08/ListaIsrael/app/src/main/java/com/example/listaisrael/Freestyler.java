@@ -3,9 +3,9 @@ package com.example.listaisrael;
 public class Freestyler {
     private String nombre;
     private String resultado;
-    private int imagen; // el recurso de la imagen: R.drawable.algo
+    private String imagen;
 
-    public Freestyler(String nombre, String resultado, int imagen) {
+    public Freestyler(String nombre, String resultado, String imagen) {
         this.nombre = nombre;
         this.resultado = resultado;
         this.imagen = imagen;
@@ -19,7 +19,7 @@ public class Freestyler {
         return resultado;
     }
 
-    public int getImagen() {
+    public String getImagen() {
         return imagen;
     }
 }
